@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Poda Closet</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="site-header">
+    <a class="site-logo" href="#home">Poda Capital</a>
+    <nav class="site-nav" aria-label="Primary">
+      <a href="#home">Home</a>
+      <a href="#market-notes">Market Notes</a>
+      <a href="#closet-capital">Closet Capital</a>
+      <a href="#about">About</a>
+    </nav>
+  </header>
+
+  <main class="portal-shell">
+    <section id="home" class="page-section portal-home">
+      <div class="portal-title">
+        <p class="eyebrow">Poda Capital / Closet OS</p>
+        <h1 class="portal-headline">A closet portfolio and market journal for what is moving in fashion.</h1>
+        <p class="subhead">Track personal style through cost, liquidity, resale behavior, and cultural momentum.</p>
+        <p class="portal-meta">Resale · Liquidity · Taste · Market Notes</p>
+      </div>
+
+      <div class="portal-grid">
+        <a class="portal-card" href="#market-notes">Market Notes</a>
+        <a class="portal-card" href="#closet-capital">Closet Capital</a>
+        <a class="portal-card" href="#about">About</a>
+      </div>
+    </section>
+
+    <section id="market-notes" class="page-section market-notes">
+      <div class="section-bar">
+        <span class="section-bar__label">Newsletter</span>
+        <span class="section-bar__title">Market Notes</span>
+      </div>
+
+      <div class="market-notes__body">
+        <article class="note-feature">
+          <h3 class="note-feature__title">Poda Note 001: What Makes a Piece Liquid?</h3>
+          <p class="note-feature__preview">Not every cool item is a good asset. A liquid piece has demand, clear styling use, recognizable brand value, and a price point where buyers can move quickly.</p>
+          <a class="note-link" href="#">Read the note</a>
+        </article>
+
+        <div class="note-rail">
+          <article class="note-teaser">
+            <h3 class="note-teaser__title">Luxury Is Not Dead. Lazy Luxury Is.</h3>
+            <a class="note-link" href="#">Read the note</a>
+          </article>
+          <article class="note-teaser">
+            <h3 class="note-teaser__title">The Spread Between Taste and Liquidity</h3>
+            <a class="note-link" href="#">Read the note</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="closet-capital" class="page-section closet-capital">
+      <div class="section-bar">
+        <span class="section-bar__title">Closet Capital</span>
+      </div>
+
+      <p class="closet-capital__tools">
+        <a class="sheet-link" href="https://docs.google.com/spreadsheets/d/e/2PACX-1vSEYtCDQrbxiln-82ECtRwK_8hq6_3bo0uVGu1IRKtKEuVqsk8xWQ2x_sL7CatdyQ/pub?gid=2076140585&single=true&output=csv" target="_blank" rel="noopener">CSV Source</a>
+      </p>
+
+      <section class="metrics-grid" aria-label="Closet metrics">
+        <article class="metric-card">
+          <span>Total Items</span>
+          <strong id="metricItems">—</strong>
+        </article>
+        <article class="metric-card">
+          <span>Closet Value</span>
+          <strong id="metricClosetValue">—</strong>
+        </article>
+        <article class="metric-card">
+          <span>Listed Value</span>
+          <strong id="metricListedValue">—</strong>
+        </article>
+        <article class="metric-card">
+          <span>Sold Revenue</span>
+          <strong id="metricSoldRevenue">—</strong>
+        </article>
+      </section>
+
+      <section class="controls">
+        <div class="toggle-group" aria-label="Status filters">
+          <button type="button" class="toggle active" data-filter="All">All</button>
+          <button type="button" class="toggle" data-filter="Closet">Closet</button>
+          <button type="button" class="toggle" data-filter="Listed">Listed</button>
+          <button type="button" class="toggle" data-filter="Sold">Sold</button>
+        </div>
+
+        <label class="search-wrap">
+          <span class="visually-hidden">Search</span>
+          <input id="searchInput" type="search" placeholder="Brand, piece, category…" autocomplete="off" />
+        </label>
+      </section>
+
+      <section id="statusMessage" class="status-message">Loading closet data...</section>
+
+      <section id="itemsGrid" class="items-grid" aria-live="polite"></section>
+    </section>
+
+    <section id="about" class="page-section about">
+      <div class="section-bar">
+        <span class="section-bar__title">About</span>
+      </div>
+      <p class="about__text">Poda is not pretending every clothing purchase is an investment. It tracks the relationship between taste, cost, wear, liquidity, and resale value.</p>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
