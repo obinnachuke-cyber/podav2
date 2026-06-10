@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <title>Poda Capital — Closet OS</title>
+  <script>
+    // Gate: only reachable after admin login on the public site.
+    if (sessionStorage.getItem("poda_admin") !== "ok") {
+      window.location.replace("index.html");
+    }
+  </script>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="admin.css" />
+</head>
+<body class="admin-body">
+  <header class="site-header">
+    <a class="site-logo" href="index.html">Poda Capital</a>
+    <nav class="site-nav" aria-label="Admin">
+      <a class="admin-public-link" href="index.html">← Public Site</a>
+      <button type="button" class="admin-newitem" id="headerNewItem">+ New Item</button>
+    </nav>
+  </header>
+
+  <div class="admin-shell">
+    <aside class="admin-sidebar">
+      <nav class="admin-nav" aria-label="Admin views">
+        <button type="button" class="admin-nav__link active" data-view="dashboard">Dashboard</button>
+        <button type="button" class="admin-nav__link" data-view="all">All Items</button>
+        <button type="button" class="admin-nav__link" data-view="closet">Closet</button>
+        <button type="button" class="admin-nav__link" data-view="listed">Listed</button>
+        <button type="button" class="admin-nav__link" data-view="sold">Sold</button>
+      </nav>
+    </aside>
+
+    <main class="admin-main" id="adminMain" aria-live="polite"></main>
+  </div>
+
+  <!-- Item create/edit modal -->
+  <div class="modal-overlay" id="modalOverlay" hidden>
+    <div class="modal-panel" role="dialog" aria-modal="true" aria-label="Item editor">
+      <div id="modalContent"></div>
+    </div>
+  </div>
+
+  <script src="admin.js"></script>
+</body>
+</html>
